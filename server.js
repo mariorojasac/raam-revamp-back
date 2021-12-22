@@ -15,9 +15,7 @@ mongoose.connection
 .on('error', () => console.log('Nope'));
 
 
-app.get('/', (req, res) => {
-    res.send('Hola Pendejos') ;
-});
+app.get('/', (req, res) => res.send('Hola Pendejos'));
 
 
 app.listen(PORT, () => console.log(`listening on PORT ${PORT}`));
