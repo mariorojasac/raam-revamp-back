@@ -11,17 +11,6 @@ Router.get('/pantry', async (req, res) => {
     }
 });
 
-
-// Create Route 
-Router.post('/pantry', async (req, res) => {
-    try {
-        res.json(await Pantry.create(req.body));
-    } catch (error) {
-        res.status(400).json(error);
-    }
-    
-});
-
 // Delete Route
 Router.delete('/pantry/:id', async (req, res) => {
     try { 
@@ -43,6 +32,19 @@ Router.put('/pantry/:id', async (req, res) => {
         res.status(400).json(error);
     }
 });
+
+
+// Create Route 
+Router.post('/pantry', async (req, res) => {
+    try {
+        res.json(await Pantry.create(req.body));
+    } catch (error) {
+        res.status(400).json(error);
+    }
+    
+});
+
+
 
 
 module.exports = Router
