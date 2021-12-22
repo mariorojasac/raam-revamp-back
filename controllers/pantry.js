@@ -22,4 +22,13 @@ Router.post('/pantry', async (req, res) => {
     
 });
 
+// Delete Route
+Router.delete('/pantry/:id', async (req, res) => {
+    try{
+        res.json(await Pantry.findByIdAndDelete(req.params.id));
+    } catch (error) {
+        res.status(400).json(error);
+    }
+});
 module.exports = Router
+        
