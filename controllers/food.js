@@ -12,3 +12,12 @@ foodRouter.get('/food', async (req, res) => {
     }
 });
 
+// Create Route
+foodRouter.post('/food', async (req, res) => {
+    try {
+        res.json(await Food.create(req.body));
+    } catch (error) {
+        res.status(400).json(error);
+    }
+});
+
