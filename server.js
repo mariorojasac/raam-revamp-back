@@ -5,7 +5,9 @@ const app = express();
 const mongoose = require('mongoose');
 const cors = require('cors');
 const morgan = require('morgan');
-const pantryController = require('./controllers/pantry')
+const pantryController = require('./controllers/pantry');
+const foodController = require('./controllers/food');
+
 
 
 mongoose.connect(DATABASE_URL); 
@@ -21,6 +23,7 @@ mongoose.connection
     app.use(express.json());
 
     app.use('/', pantryController)
+    app.use('/', foodController)
 
  
 

@@ -12,6 +12,18 @@ foodRouter.get('/food', async (req, res) => {
     }
 });
 
+
+// Delete Route
+foodRouter.delete('/food/:id', async (req, res) => {
+    try {
+        res.json(await Food.findByIdAndDelete(req.params.id));
+    } catch (error) {
+        res.status(400).json(error);
+    }
+})
+
+
+
 // Create Route
 foodRouter.post('/food', async (req, res) => {
     try {
@@ -20,4 +32,7 @@ foodRouter.post('/food', async (req, res) => {
         res.status(400).json(error);
     }
 });
+
+module.exports = foodRouter
+
 
