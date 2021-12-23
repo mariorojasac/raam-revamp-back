@@ -26,7 +26,7 @@ Router.put('/pantry/:id', async (req, res) => {
         res.json(await Pantry.findByIdAndUpdate(
             req.params.id,
             req.body,
-            { new:true })
+            { new: true })
         );
     } catch (error) {
         res.status(400).json(error);

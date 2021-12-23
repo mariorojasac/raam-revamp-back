@@ -22,6 +22,19 @@ foodRouter.delete('/food/:id', async (req, res) => {
     }
 })
 
+//Update Route
+foodRouter.put('/food/:id', async (req, res) => {
+    try {
+        res.json(await Food.findByIdAndUpdate(
+            req.params.id,
+            req.body,
+            { new: true })
+        );
+    } catch (error) {
+        res.status(400).json(error);
+    }
+});
+
 
 
 // Create Route
