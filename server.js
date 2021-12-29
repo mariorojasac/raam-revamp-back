@@ -27,17 +27,16 @@ mongoose.connection
 
     app.use(function(req, res, next) {
         res.header("Access-Control-Allow-Origin", '*');
-        res.header("Access-Control-Credentials", true);
+        res.header("Access-Control-Allow-Credentials", true);
         res.header("Access-Control-Allow-Methods", 'GET,PUSH,POST,DELETE,OPTIONS');
-        res.header("Access-Control-Allow-Origin", true);
         next();
-    })
+    });
 
         
 
  
 
-app.get('/', (req, res) => res.send('Hola Pendejos'));
+app.get('/', (req, res) => res.send('Dang ol yo man'));
 
 
 app.listen(PORT, () => console.log(`listening on PORT ${PORT}`));
