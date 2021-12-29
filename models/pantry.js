@@ -5,8 +5,8 @@ const Schema = mongoose.Schema;
 const pantrySchema = new Schema({
     img: { type: String },
     name: { type: String},
-    location: { type: String},
-    description: { type: String }
+    description: { type: String },
+    location: { type: String}
 });
 
 

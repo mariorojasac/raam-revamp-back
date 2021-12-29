@@ -25,6 +25,16 @@ mongoose.connection
     app.use('/', pantryController)
     app.use('/', foodController)
 
+    app.use(function(req, res, next) {
+        res.header("Access-Control-Allow-Origin", '*');
+        res.header("Access-Control-Credentials", true);
+        res.header("Access-Control-Allow-Methods", 'GET,PUSH,POST,DELETE,OPTIONS');
+        res.header("Access-Control-Allow-Origin", true);
+        next();
+    })
+
+        
+
  
 
 app.get('/', (req, res) => res.send('Hola Pendejos'));
