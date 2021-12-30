@@ -20,14 +20,14 @@ mongoose.connection
 
     app.use(cors());
     app.use(morgan('dev'));
-    app.use(express.json());
+    app.use(express.json({strict: false}));
+    
 
     app.use('/', pantryController)
     app.use('/', foodController)
 
     app.use(function(req, res, next) {
-        res.header("Access-Control-Allow-Origin", '*');
-        res.header("Access-Control-Allow-Credentials", true);
+        res.header("Access-Control-Allow-Origin", "*");
         res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
         res.header("Access-Control-Allow-Methods", 'GET,PUSH,POST,DELETE,OPTIONS');
         next();
@@ -37,7 +37,7 @@ mongoose.connection
 
  
 
-app.get('/', (req, res) => res.send('Dang ol yo man'));
+// app.get('/', (req, res) => res.send('Dang ol yo man'));
 
 
 app.listen(PORT, () => console.log(`listening on PORT ${PORT}`));
